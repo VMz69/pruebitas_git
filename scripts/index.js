@@ -1,6 +1,8 @@
 const basePath = location.hostname === "vmz69.github.io"
-    ? "/pruebitas_git/"
-    : "./";
+    ? `/${location.pathname.split("/")[1]}/`
+    : location.pathname.includes("/pages/")
+        ? "../"
+        : "./";
 
 async function cargarPartial(nombre) {
     try {
