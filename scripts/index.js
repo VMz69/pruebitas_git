@@ -1,6 +1,6 @@
 async function cargarPartial(nombre) {
     try {
-        const ruta = `/partials/${nombre}.html`;
+        const ruta = `./partials/${nombre}.html`;
         const resp = await fetch(ruta, { cache: "no-cache" }); // Realiza la petición HTTP para obtener el contenido del partial
         if (!resp.ok) throw new Error(`Error al cargar ${ruta}: ${resp.status}`); // Si la respuesta no es correcta (404, 500, etc.), lanza un error
 
