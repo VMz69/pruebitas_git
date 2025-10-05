@@ -16,6 +16,13 @@ async function cargarPartial(nombre) {
 
         placeholder.innerHTML = html; //Inserta el contenido HTML descargado dentro del contenedor
 
+         // Si es el header, ajustamos los enlaces
+        if (nombre === "header") {
+            const links = placeholder.querySelectorAll("a");
+            links.forEach(link => {
+                link.href = basePath + link.getAttribute("href");
+            });
+        }
 
     } catch (err) {
         console.error(err);
